@@ -1,0 +1,66 @@
+{
+ "cafe-interior": {
+  "unsplash": "https://unsplash.com/photos/a-restaurant-with-tables-and-chairs-and-a-counter-WdE9JhjDb0M",
+  "alt": "a restaurant with tables and chairs and a counter"
+ },
+ "yogurt-bowl": {
+  "unsplash": "https://unsplash.com/photos/strawberry-and-blackberries-on-top-of-brown-table-LymX5D2sSWM",
+  "alt": "strawberry and blackberries on top of brown table"
+ },
+ "yogurt-base": {
+  "unsplash": "https://unsplash.com/photos/a-bowl-of-yogurt-with-a-spoon-in-it-NFHeBysjCTI",
+  "alt": "a bowl of yogurt with a spoon in it"
+ },
+ "fruits": {
+  "unsplash": "https://unsplash.com/photos/a-close-up-of-berries-and-blueberries-in-a-bowl-O5gvtf5dOjQ",
+  "alt": "A close up of berries and blueberries in a bowl"
+ },
+ "granola": {
+  "unsplash": "https://unsplash.com/photos/brown-peanuts-in-white-ceramic-bowl-GiB3TUjWIks",
+  "alt": "brown peanuts in white ceramic bowl"
+ },
+ "honey": {
+  "unsplash": "https://unsplash.com/photos/a-close-up-of-a-spoon-fQ5NRUwqo6k",
+  "alt": "a close-up of a spoon"
+ },
+ "custom": {
+  "unsplash": "https://unsplash.com/photos/a-table-topped-with-desserts-on-top-of-a-metal-tray-D6z7hWlFUUI",
+  "alt": "A table topped with desserts on top of a metal tray"
+ },
+ "dusk-yokohama": {
+  "unsplash": "https://unsplash.com/photos/a-ferris-wheel-in-the-middle-of-a-city-u1nFAZS_wcs",
+  "alt": "a ferris wheel in the middle of a city"
+ },
+ "lighting": {
+  "unsplash": "https://unsplash.com/photos/cafe-interior-with-hanging-bulbs-and-table-VobvKmG-StA",
+  "alt": "cafe interior with hanging bulbs and table"
+ },
+ "bar-interior": {
+  "unsplash": "https://unsplash.com/photos/clear-martini-glass-on-brown-wooden-table-QjUY7auDzUQ",
+  "alt": "clear martini glass on brown wooden table"
+ },
+ "karaoke-mic": {
+  "unsplash": "https://unsplash.com/photos/woman-holding-microphone-r2kxuoOFtHY",
+  "alt": "woman holding microphone"
+ },
+ "night-bar": {
+  "unsplash": "https://unsplash.com/photos/clear-wine-glass-on-table-EX8UtPjOFhY",
+  "alt": "clear wine glass on table"
+ },
+ "cocktail": {
+  "unsplash": "https://unsplash.com/photos/red-juice-with-clear-cocktail-glass-vAkIPzXOSOc",
+  "alt": "red juice with clear cocktail glass"
+ },
+ "pet": {
+  "unsplash": "https://unsplash.com/photos/a-man-and-his-dog-enjoying-brunch-together-HL-ewalii58",
+  "alt": "A man and his dog enjoying brunch together"
+ },
+ "party": {
+  "unsplash": "https://unsplash.com/photos/a-group-of-people-sitting-around-a-table-toasting-ilB6ZKpO0QE",
+  "alt": "a group of people sitting around a table toasting"
+ },
+ "yokohama-night": {
+  "unsplash": "https://unsplash.com/photos/city-skyline-during-night-time-6abEDi5YszQ",
+  "alt": "city skyline during night time"
+ }
+}
