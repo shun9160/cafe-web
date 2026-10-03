@@ -1,0 +1,444 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>solruna terrace | 横浜 昼はグリークヨーグルトカフェ、夜はカラオケバー</title>
+  <meta name="description" content="横浜のsolruna terrace（ソルルナ テラス）。昼はからだにやさしいグリークヨーグルトカフェ、夜はLIVE DAM STADIUMで歌えるカラオケバー。貸切・パーティー・ペット同伴OK。" />
+  <meta name="theme-color" content="#f3f1e9" />
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime&family=Inter+Tight:wght@400;500;600&family=Unbounded:wght@500;800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/src/style.css" />
+</head>
+<body>
+  <!-- ===== Preloader ===== -->
+  <div class="preloader" data-preloader>
+    <div class="preloader__curtain" data-preloader-curtain></div>
+    <div class="preloader__logo" data-preloader-logo>
+      <svg viewBox="0 0 100 100" aria-hidden="true"><use href="#logo-mark" /></svg>
+    </div>
+    <span class="preloader__progress" data-preloader-progress>0%</span>
+  </div>
+
+  <!-- SVG sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <mask id="crescent-mask">
+        <rect width="100" height="100" fill="#fff" />
+        <circle cx="62" cy="40" r="34" fill="#000" />
+      </mask>
+      <symbol id="logo-mark" viewBox="0 0 100 100">
+        <circle cx="50" cy="50" r="46" fill="currentColor" mask="url(#crescent-mask)" />
+        <circle cx="62" cy="40" r="22" fill="none" stroke="currentColor" stroke-width="3" />
+      </symbol>
+      <symbol id="arrow" viewBox="0 0 12 12"><path d="M3 1l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" /></symbol>
+      <symbol id="plus" viewBox="0 0 20 20"><path d="M10 2v16M2 10h16" stroke="currentColor" stroke-width="1.4" stroke-dasharray="2 2" /></symbol>
+      <symbol id="clover" viewBox="0 0 40 40"><path d="M20 4c4 0 7 3 7 7 0 2-1 4-2 5 1-1 3-2 5-2 4 0 7 3 7 6s-3 7-7 7c-2 0-4-1-5-2 1 1 2 3 2 5 0 4-3 7-7 7s-7-3-7-7c0-2 1-4 2-5-1 1-3 2-5 2-4 0-7-3-7-7s3-6 7-6c2 0 4 1 5 2-1-1-2-3-2-5 0-4 3-7 7-7z" fill="currentColor"/></symbol>
+    </defs>
+  </svg>
+
+  <!-- ===== Header ===== -->
+  <header class="header" data-header>
+    <nav class="header__nav" aria-label="メインメニュー">
+      <a href="#concept">Concept</a>
+      <a href="#cafe">Cafe</a>
+      <a href="#bar">Bar</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a href="#top" class="header__logo" aria-label="solruna terrace トップへ">
+      <svg viewBox="0 0 100 100"><use href="#logo-mark" /></svg>
+    </a>
+    <div class="header__right">
+      <span class="header__clock" data-clock><i data-clock-icon>☀</i><b data-clock-time>11:00</b></span>
+      <a href="#access" class="header__link">Access</a>
+      <a href="#reserve" class="image-button">
+        <span class="image-button__thumbs">
+          <img src="/images/yogurt-bowl.jpg" alt="" />
+          <img src="/images/cocktail.jpg" alt="" />
+          <img src="/images/bar-interior.jpg" alt="" />
+        </span>
+        <span class="image-button__label">予約・貸切</span>
+        <svg class="image-button__arrow"><use href="#arrow" /></svg>
+      </a>
+      <button class="header__menu-btn" type="button" data-menu-toggle aria-expanded="false" aria-controls="main-menu">
+        <span>Menu</span>
+        <i class="dots"><b></b><b></b><b></b><b></b><b></b><b></b></i>
+      </button>
+    </div>
+  </header>
+
+  <div class="main-menu" id="main-menu" data-menu>
+    <nav class="main-menu__nav">
+      <a href="#concept" data-menu-link>Concept</a>
+      <a href="#cafe" data-menu-link>Cafe</a>
+      <a href="#scenes" data-menu-link>Day &amp; Night</a>
+      <a href="#bar" data-menu-link>Bar</a>
+      <a href="#faq" data-menu-link>FAQ</a>
+      <a href="#access" data-menu-link>Access</a>
+    </nav>
+    <a href="#reserve" class="image-button image-button--wide" data-menu-link>
+      <span class="image-button__thumbs">
+        <img src="/images/yogurt-bowl.jpg" alt="" />
+        <img src="/images/cocktail.jpg" alt="" />
+        <img src="/images/bar-interior.jpg" alt="" />
+      </span>
+      <span class="image-button__label">予約・貸切のご相談</span>
+      <svg class="image-button__arrow"><use href="#arrow" /></svg>
+    </a>
+  </div>
+
+  <!-- 3D stage (fixed, follows anchors) -->
+  <div class="stage" data-stage aria-hidden="true"><canvas data-stage-canvas></canvas></div>
+
+  <main>
+    <!-- ===== 01 HERO (day) ===== -->
+    <section class="hero" id="top" data-header-theme="dark" data-time="11:00" data-period="day">
+      <div class="hero__intro">
+        <h1 class="hero__title">SOLRUNA TERRACE<br /><span>YOKOHAMA</span></h1>
+        <p class="hero__lead">昼はグリークヨーグルトカフェ、<br />夜はカラオケが歌えるバー。<br />横浜から、健康と楽しさを。</p>
+        <a href="#reserve" class="link-arrow"><svg><use href="#arrow" /></svg>予約・貸切のご相談</a>
+      </div>
+      <ul class="hero__stats">
+        <li><b class="stat-num">11:00<small>–18:00</small></b><span>Greek yogurt cafe<br />からだにやさしいカフェタイム</span></li>
+        <li><b class="stat-num">19:00<small>–3:00</small></b><span>Karaoke bar<br />お酒と音楽で盛り上がる夜</span></li>
+      </ul>
+      <div class="hero__anchor three-anchor" data-anchor data-model="yogurt" data-scale="1.15"></div>
+      <div class="hero__wordmark" aria-hidden="true" data-fit>
+        <span data-hero-word>solruna</span>
+      </div>
+      <ul class="hero__icons" aria-label="特徴">
+        <li>Shisha</li><li>Karaoke</li><li>Pet friendly</li>
+      </ul>
+    </section>
+
+    <!-- ===== 02 CONCEPT IN NUMBERS ===== -->
+    <section class="features" id="concept" data-header-theme="dark" data-time="12:00" data-period="day" data-features>
+      <div class="features__inner">
+        <div class="features__col">
+          <h2 class="title-xl">数字で見る<br />solruna</h2>
+          <div class="feature">
+            <span class="eyebrow">• Two faces</span>
+            <b class="feature__num">2<small>つの顔</small></b>
+            <p>昼はグリークヨーグルトカフェ、夜はカラオケバー。1日を通して違う楽しみ方ができます。</p>
+          </div>
+        </div>
+        <div class="features__anchor three-anchor" data-anchor data-model="yogurt" data-scale="0.95"></div>
+        <div class="features__col features__col--right">
+          <div class="feature">
+            <span class="eyebrow">• Open hours</span>
+            <b class="feature__num">16<small>h</small></b>
+            <p>11:00から翌3:00まで。ランチにも、仕事帰りの一杯にも。</p>
+          </div>
+          <div class="feature">
+            <span class="eyebrow">• Protein</span>
+            <b class="feature__num">15<small>g+</small></b>
+            <p>ボウル1杯あたりのたんぱく質（目安）。低脂質で、満足感はしっかり。</p>
+          </div>
+          <div class="feature">
+            <span class="eyebrow">• Karaoke</span>
+            <b class="feature__num feature__num--text">LIVE DAM<br />STADIUM</b>
+            <p>本格カラオケ完備。夜は思いっきり歌える空間に変わります。</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== 03 CAFE: yogurt details (3D pinned center) ===== -->
+    <section class="package" id="cafe" data-header-theme="dark" data-time="14:00" data-period="day">
+      <div class="package__head">
+        <h2 class="title-xl">からだにやさしく、<br />心も満たす。</h2>
+        <p class="mono">高たんぱく・低脂質のグリークヨーグルトに、こだわりの素材をのせて。ゆったり過ごせるカフェタイムを。</p>
+      </div>
+      <div class="package__sticky">
+        <div class="package__anchor three-anchor" data-anchor data-model="yogurt" data-scale="1.05" data-pin></div>
+      </div>
+      <ol class="package__list">
+        <li class="package-item">
+          <span class="package-item__num">01</span>
+          <h3>水切りグリークヨーグルト</h3>
+          <p>じっくり水切りした、濃厚でなめらかなヨーグルト。高たんぱく・低脂質で、毎日食べたくなるベース。</p>
+          <img class="package-item__img" src="/images/yogurt-base.jpg" alt="なめらかなグリークヨーグルト" loading="lazy" />
+        </li>
+        <li class="package-item">
+          <span class="package-item__num">02</span>
+          <h3>旬のフルーツ</h3>
+          <p>ベリー、キウイ、バナナ。季節ごとに一番おいしいフルーツをたっぷりと。</p>
+          <img class="package-item__img" src="/images/fruits.jpg" alt="旬のフルーツ" loading="lazy" />
+        </li>
+        <li class="package-item">
+          <span class="package-item__num">03</span>
+          <h3>グラノーラ &amp; ナッツ</h3>
+          <p>香ばしいグラノーラとナッツで、食感と満足感をプラス。</p>
+          <img class="package-item__img" src="/images/granola.jpg" alt="グラノーラとナッツ" loading="lazy" />
+        </li>
+        <li class="package-item">
+          <span class="package-item__num">04</span>
+          <h3>はちみつ &amp; ソース</h3>
+          <p>はちみつ、メープル、自家製ソース。仕上げのひとかけで、やさしい甘さに。</p>
+          <img class="package-item__img" src="/images/honey.jpg" alt="はちみつ" loading="lazy" />
+        </li>
+        <li class="package-item">
+          <span class="package-item__num">05</span>
+          <h3>カスタムトッピング</h3>
+          <p>プロテイン追加やトッピングの組み合わせも自由に。Wi-Fi完備の店内でゆっくりどうぞ。</p>
+          <img class="package-item__img" src="/images/custom.jpg" alt="カスタムトッピング" loading="lazy" />
+        </li>
+      </ol>
+    </section>
+
+    <!-- ===== 04 DAY → NIGHT stacked cards (darkening) ===== -->
+    <section class="formats" id="scenes" data-formats>
+      <div class="anchor-none anchor-none--top three-anchor" data-anchor data-model="none"></div>
+      <article class="format format--day" data-format data-header-theme="dark" data-time="15:00" data-period="day">
+        <div class="format__media"><img src="/images/cafe-interior.jpg" alt="明るい昼のカフェ店内" loading="lazy" /></div>
+        <div class="format__body">
+          <header class="format__head">
+            <h3 class="format__title">Cafe</h3>
+            <span class="format__count">01<span>/03</span></span>
+          </header>
+          <p class="format__lead mono">明るく開放的な空間で、<br />ゆったりカフェタイム。</p>
+          <a href="#cafe" class="link-arrow"><svg><use href="#arrow" /></svg>メニューを見る</a>
+          <dl class="format__specs">
+            <div class="format__spec format__spec--wide"><dt>Open</dt><dd>11:00 – 18:00</dd></div>
+            <div class="format__spec"><dt>Menu</dt><dd>ヨーグルト・ドリンク・軽食</dd></div>
+            <div class="format__spec"><dt>Free</dt><dd>Wi-Fi・ペット同伴OK</dd></div>
+          </dl>
+          <img class="format__thumb" src="/images/yogurt-bowl.jpg" alt="" loading="lazy" />
+        </div>
+      </article>
+      <article class="format format--dusk" data-format data-header-theme="dark" data-time="18:00" data-period="dusk">
+        <div class="format__media"><img src="/images/dusk-yokohama.jpg" alt="夕暮れの横浜" loading="lazy" /></div>
+        <div class="format__body">
+          <header class="format__head">
+            <h3 class="format__title">Transition</h3>
+            <span class="format__count">02<span>/03</span></span>
+          </header>
+          <p class="format__lead mono">照明と音響を切り替えて、<br />空間がもうひとつの顔に。</p>
+          <a href="#bar" class="link-arrow"><svg><use href="#arrow" /></svg>夜の顔を見る</a>
+          <dl class="format__specs">
+            <div class="format__spec format__spec--wide"><dt>Change</dt><dd>18:00 – 19:00</dd></div>
+            <div class="format__spec"><dt>Layout</dt><dd>清掃・レイアウト変更</dd></div>
+            <div class="format__spec"><dt>Mood</dt><dd>照明・音響の切替</dd></div>
+          </dl>
+          <img class="format__thumb" src="/images/lighting.jpg" alt="" loading="lazy" />
+        </div>
+      </article>
+      <article class="format format--night" data-format data-header-theme="light" data-time="19:00" data-period="night">
+        <div class="format__media"><img src="/images/bar-interior.jpg" alt="夜のバー店内" loading="lazy" /></div>
+        <div class="format__body">
+          <header class="format__head">
+            <h3 class="format__title">Bar</h3>
+            <span class="format__count">03<span>/03</span></span>
+          </header>
+          <p class="format__lead mono">お酒と音楽で、<br />最高に盛り上がる夜を。</p>
+          <a href="#bar" class="link-arrow"><svg><use href="#arrow" /></svg>バーについて</a>
+          <dl class="format__specs">
+            <div class="format__spec format__spec--wide"><dt>Open</dt><dd>19:00 – 3:00</dd></div>
+            <div class="format__spec"><dt>Karaoke</dt><dd>LIVE DAM STADIUM</dd></div>
+            <div class="format__spec"><dt>Party</dt><dd>貸切・イベント可</dd></div>
+          </dl>
+          <img class="format__thumb" src="/images/karaoke-mic.jpg" alt="" loading="lazy" />
+        </div>
+      </article>
+    </section>
+
+    <!-- ===== 05 BAR (night, sticky image + 5 items) ===== -->
+    <section class="key-terms" id="bar" data-header-theme="light" data-time="21:00" data-period="night">
+      <div class="key-terms__media">
+        <div class="key-terms__sticky">
+          <img src="/images/night-bar.jpg" alt="夜のカラオケバー" loading="lazy" data-parallax-img />
+          <div class="key-terms__overlay">
+            <p class="mono">お酒と音楽で、最高に盛り上がる夜を。</p>
+            <h2 class="key-terms__title">Night</h2>
+          </div>
+          <span class="stars" aria-hidden="true"></span>
+        </div>
+      </div>
+      <div class="key-terms__content">
+        <span class="eyebrow">Karaoke &amp; Bar</span>
+        <p class="key-terms__intro mono">19時、照明が落ちると solruna は夜の顔へ。カラオケ完備の空間で、仲間と思いっきり歌って、乾杯を。</p>
+        <div class="key-terms__meta">
+          <span class="mono">Live music<br />Party &amp; events</span>
+          <img src="/images/cocktail.jpg" alt="カクテル" loading="lazy" />
+          <span class="mono">@solruna_terrace</span>
+        </div>
+        <ol class="terms">
+          <li class="term"><span class="term__label">Karaoke <i>01.</i></span><b class="term__value">LIVE DAM STADIUM</b><p>最新のカラオケ機種を完備。精密採点で盛り上がるのも、しっとり歌うのも自由。</p></li>
+          <li class="term"><span class="term__label">Drink <i>02.</i></span><b class="term__value">カクテル &amp; ドリンク</b><p>定番カクテルからクラフトビール、ノンアルコールまで豊富なドリンクメニュー。</p></li>
+          <li class="term"><span class="term__label">Food <i>03.</i></span><b class="term__value">バーフード</b><p>お酒に合うおつまみや軽食をご用意。小腹がすいた夜にも。</p></li>
+          <li class="term"><span class="term__label">Shisha <i>04.</i></span><b class="term__value">シーシャ</b><p>フレーバーを選んで、ゆったりと煙をくゆらせる大人の時間。</p></li>
+          <li class="term"><span class="term__label">Private <i>05.</i></span><b class="term__value">貸切・パーティー</b><p>誕生日、歓送迎会、オフ会、ライブイベントまで。貸切のご相談はお気軽に。</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ===== 06 POCKET (SNS / reservation) ===== -->
+    <section class="digital" id="sns" data-header-theme="light" data-time="22:00" data-period="night" data-digital>
+      <div class="digital__head">
+        <h2 class="title-xl">solrunaを、<br />ポケットに。</h2>
+        <p>最新メニューも、今夜のイベントも、予約も。スマホひとつでつながれます。</p>
+      </div>
+      <div class="digital__phone">
+        <div class="phone-hand">
+          <svg class="phone-hand__hand phone-hand__hand--back" viewBox="0 0 400 620" aria-hidden="true">
+            <rect x="268" y="232" width="86" height="44" rx="22" fill="currentColor"/>
+            <rect x="272" y="282" width="92" height="46" rx="23" fill="currentColor"/>
+            <rect x="270" y="334" width="88" height="46" rx="23" fill="currentColor"/>
+            <rect x="262" y="386" width="76" height="42" rx="21" fill="currentColor"/>
+          </svg>
+          <svg class="phone-hand__hand phone-hand__hand--front" viewBox="0 0 400 620" aria-hidden="true">
+            <path d="M120 620c-6-40-26-70-44-104-14-26-14-56 0-78l14-22c8-30 14-62 26-84 10-18 34-14 36 6l4 64c4 22 10 34 30 40 40 10 90 12 124 22 26 8 42 34 40 64-2 36-14 64-30 92H120z" fill="currentColor"/>
+            <path d="M150 474c30 6 66 8 100 8" fill="none" stroke="#262626" stroke-opacity=".25" stroke-width="3" stroke-linecap="round"/>
+          </svg>
+          <div class="phone">
+            <div class="phone__screen">
+              <div class="phone__bar"><svg viewBox="0 0 100 100"><use href="#logo-mark"/></svg><span>solruna_terrace</span></div>
+              <div class="phone__feed" data-phone-feed>
+                <img src="/images/yogurt-bowl.jpg" alt="" /><img src="/images/cocktail.jpg" alt="" /><img src="/images/cafe-interior.jpg" alt="" /><img src="/images/karaoke-mic.jpg" alt="" /><img src="/images/fruits.jpg" alt="" /><img src="/images/night-bar.jpg" alt="" />
+                <img src="/images/yogurt-bowl.jpg" alt="" /><img src="/images/cocktail.jpg" alt="" /><img src="/images/cafe-interior.jpg" alt="" /><img src="/images/karaoke-mic.jpg" alt="" /><img src="/images/fruits.jpg" alt="" /><img src="/images/night-bar.jpg" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <ul class="digital__list">
+        <li><svg class="digital__icon"><use href="#clover" /></svg><h3>最新情報はSNSで</h3><p>季節限定のボウルや新作カクテルを、InstagramとLINEでいち早くお届け。</p></li>
+        <li><svg class="digital__icon"><use href="#clover" /></svg><h3>ネット予約・貸切</h3><p>席の予約から貸切のご相談まで、24時間フォームで受付中。</p></li>
+        <li><svg class="digital__icon"><use href="#clover" /></svg><h3>イベント・ライブ告知</h3><p>カラオケ大会、DJナイト、ライブ。今夜の予定をチェック。</p></li>
+      </ul>
+      <a href="#reserve" class="link-arrow digital__cta"><svg><use href="#arrow" /></svg>予約する</a>
+    </section>
+
+    <!-- ===== 07 SCENES (benefit cards) ===== -->
+    <section class="benefits" data-header-theme="light" data-time="23:00" data-period="night">
+      <article class="benefit" data-benefit-card>
+        <h3>ペット同伴OK</h3>
+        <p>わんちゃんと一緒に、テラス感覚のカフェタイム。お散歩途中にもどうぞ。</p>
+        <a href="#faq" class="link-arrow"><svg><use href="#arrow" /></svg>詳しく見る</a>
+        <div class="benefit__visual"><img src="/images/pet.jpg" alt="ペットと過ごすカフェ" loading="lazy" /><b class="benefit__metric">Pet OK</b></div>
+      </article>
+      <article class="benefit" data-benefit-card>
+        <h3>貸切パーティー</h3>
+        <p>誕生日、歓送迎会、オフ会に。カラオケ付きで少人数から大人数まで対応。</p>
+        <a href="#reserve" class="link-arrow"><svg><use href="#arrow" /></svg>詳しく見る</a>
+        <div class="benefit__visual"><img src="/images/party.jpg" alt="貸切パーティー" loading="lazy" /><b class="benefit__metric">〜40名</b></div>
+      </article>
+      <article class="benefit" data-benefit-card>
+        <h3>横浜観光にも</h3>
+        <p>インバウンド・観光のお客様も大歓迎。横浜らしい夜の体験をお届けします。</p>
+        <a href="#access" class="link-arrow"><svg><use href="#arrow" /></svg>詳しく見る</a>
+        <div class="benefit__visual"><img src="/images/yokohama-night.jpg" alt="横浜の夜景" loading="lazy" /><b class="benefit__metric">Welcome</b></div>
+      </article>
+    </section>
+
+    <!-- ===== 08 STICKY GALLERY ===== -->
+    <section class="sticky-gallery" data-header-theme="light" data-time="0:00" data-period="night" data-gallery>
+      <div class="sticky-gallery__pin">
+        <figure class="g g--1"><img src="/images/cafe-interior.jpg" alt="" loading="lazy" /></figure>
+        <figure class="g g--2"><img src="/images/yogurt-bowl.jpg" alt="" loading="lazy" /></figure>
+        <figure class="g g--3"><img src="/images/bar-interior.jpg" alt="" loading="lazy" /></figure>
+        <figure class="g g--4"><img src="/images/cocktail.jpg" alt="" loading="lazy" /></figure>
+        <figure class="g g--5"><img src="/images/karaoke-mic.jpg" alt="" loading="lazy" /></figure>
+        <figure class="g g--6"><img src="/images/yokohama-night.jpg" alt="" loading="lazy" /></figure>
+      </div>
+    </section>
+
+    <!-- ===== 09 FAQ ===== -->
+    <section class="faq" id="faq" data-header-theme="light" data-time="1:00" data-period="night">
+      <div class="anchor-none anchor-none--bottom three-anchor" data-anchor data-model="none"></div>
+      <div class="faq__head">
+        <h2 class="faq__title">FAQ</h2>
+        <p class="mono">よくあるご質問</p>
+      </div>
+      <div class="faq__list" data-accordion-list>
+        <details class="faq-item" data-accordion>
+          <summary data-accordion-summary><span class="faq-item__num">01.</span><span class="faq-item__q">予約は必要ですか？</span><svg class="faq-item__icon"><use href="#plus"/></svg></summary>
+          <div class="faq-item__a" data-accordion-content><p>カフェタイムは予約なしでもご利用いただけます。夜のバー・カラオケや週末は混み合うため、ご予約がおすすめです。</p></div>
+        </details>
+        <details class="faq-item" data-accordion>
+          <summary data-accordion-summary><span class="faq-item__num">02.</span><span class="faq-item__q">ペットと一緒に入店できますか？</span><svg class="faq-item__icon"><use href="#plus"/></svg></summary>
+          <div class="faq-item__a" data-accordion-content><p>はい、ペット同伴OKです。リードの着用など、他のお客様への配慮にご協力ください。</p></div>
+        </details>
+        <details class="faq-item" data-accordion>
+          <summary data-accordion-summary><span class="faq-item__num">03.</span><span class="faq-item__q">貸切は何名から可能ですか？</span><svg class="faq-item__icon"><use href="#plus"/></svg></summary>
+          <div class="faq-item__a" data-accordion-content><p>人数・時間帯・ご予算に合わせてご案内します。カラオケ付きのパーティープランもご用意しています。フォームよりお気軽にご相談ください。</p></div>
+        </details>
+        <details class="faq-item" data-accordion>
+          <summary data-accordion-summary><span class="faq-item__num">04.</span><span class="faq-item__q">支払い方法は？</span><svg class="faq-item__icon"><use href="#plus"/></svg></summary>
+          <div class="faq-item__a" data-accordion-content><p>現金のほか、各種クレジットカード・電子マネー・QRコード決済がご利用いただけます。</p></div>
+        </details>
+        <details class="faq-item" data-accordion>
+          <summary data-accordion-summary><span class="faq-item__num">05.</span><span class="faq-item__q">カフェとバーで営業時間は違いますか？</span><svg class="faq-item__icon"><use href="#plus"/></svg></summary>
+          <div class="faq-item__a" data-accordion-content><p>11:00〜18:00がカフェ、18:00〜19:00は準備・切替時間、19:00〜翌3:00がバー営業です。営業時間は変更になる場合があります。</p></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- ===== 10 RESERVE FORM ===== -->
+    <section class="cta-form" id="reserve" data-header-theme="dark" data-time="2:00" data-period="night">
+      <div class="cta-form__head">
+        <h2 class="title-xl">予約・貸切の<br />ご相談</h2>
+        <p class="mono">フォームを送信いただければ、<br />担当よりご連絡いたします。</p>
+      </div>
+      <div class="cta-form__anchor three-anchor" data-anchor data-model="cocktail" data-scale="1.1"></div>
+      <form class="form" data-form novalidate>
+        <label class="field"><span>お名前*</span><input name="name" required placeholder="横浜 太郎" autocomplete="name" /></label>
+        <label class="field"><span>メール*</span><input name="email" type="email" required placeholder="you@example.com" autocomplete="email" /></label>
+        <label class="field"><span>電話*</span><input name="tel" type="tel" required placeholder="045-000-0000" autocomplete="tel" /></label>
+        <div class="field-row">
+          <label class="field"><span>希望日時</span><input name="date" type="datetime-local" /></label>
+          <label class="field"><span>人数</span><input name="people" type="number" min="1" placeholder="4" /></label>
+        </div>
+        <label class="field"><span>ご用途</span>
+          <select name="purpose">
+            <option>カフェ利用</option>
+            <option>バー・カラオケ</option>
+            <option>貸切・パーティー</option>
+            <option>イベント・ライブ</option>
+            <option>その他</option>
+          </select>
+        </label>
+        <label class="checkbox"><input type="checkbox" name="agree" required /><span>送信により、<a href="#">個人情報の取り扱い</a>に同意します</span></label>
+        <button type="submit" class="submit"><span>送信する</span><svg><use href="#arrow" /></svg></button>
+        <p class="form__status" data-form-status role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="footer" id="access" data-header-theme="light" data-time="3:00" data-period="night">
+    <div class="footer__grid">
+      <div class="footer__col">
+        <span class="eyebrow">Tel</span>
+        <a href="tel:0450000000">045-000-0000</a>
+        <a href="#reserve" class="link-arrow"><svg><use href="#arrow" /></svg>予約・貸切のご相談</a>
+        <span class="eyebrow">Mail</span>
+        <a href="mailto:hello@solruna-terrace.jp">hello@solruna-terrace.jp</a>
+        <span class="eyebrow">Address</span>
+        <p>〒220-0000<br />神奈川県横浜市○○区○○ 0-0-0</p>
+      </div>
+      <div class="footer__col footer__col--center">
+        <a href="#top" class="footer__top" data-scroll-top>Back to top</a>
+        <svg class="footer__mark" viewBox="0 0 100 100"><use href="#logo-mark" /></svg>
+        <p class="footer__note">Cafe 11:00 – 18:00 / Bar 19:00 – 3:00<br />※営業時間は変更の可能性があります</p>
+      </div>
+      <div class="footer__col footer__col--right">
+        <span class="eyebrow">Menu</span>
+        <a href="#concept">Concept</a><a href="#cafe">Cafe</a><a href="#bar">Bar</a><a href="#faq">FAQ</a>
+        <span class="eyebrow">Social</span>
+        <a href="#" rel="noopener">Instagram</a><a href="#" rel="noopener">LINE</a><a href="#" rel="noopener">TikTok</a>
+      </div>
+    </div>
+    <div class="footer__wordmark" aria-hidden="true" data-footer-word data-fit>solruna</div>
+    <div class="footer__bottom">
+      <span>Shisha · Karaoke · Pet friendly</span>
+      <span>© 2026 solruna terrace</span>
+      <span>Yokohama</span>
+    </div>
+  </footer>
+
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
