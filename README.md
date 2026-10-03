@@ -33,7 +33,7 @@ npm run build    # dist/ に静的ファイル出力（どこにでも置ける�
 
 ## 写真の差し替え
 写真本体は `public/images/credits.json` に記載した Unsplash から `npm run images` で取得します（`npm run dev` / `build` 時に自動実行）。
-`public/images/` の同名ファイルを上書きするだけで反映されます（現在はダミー画像）。
+自分で撮った写真に替える場合は、`public/images/` の同名ファイルを上書きしてください。
 
 | ファイル | 用途 |
 |---|---|
